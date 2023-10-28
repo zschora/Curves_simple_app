@@ -2,15 +2,15 @@
 // Created by гиоргий on 28.10.2023.
 //
 
-#ifndef VECTOR3D_H_ELLIPS_H
-#define VECTOR3D_H_ELLIPS_H
+#ifndef VECTOR3D_H_ELLIPSE_H
+#define VECTOR3D_H_ELLIPSE_H
 
 #include "Curve.h"
 #include "Vector3D.h"
 
-class Ellips : public Curve {
+class Ellipse : public Curve {
 public:
-    Ellips(double big_radius, double small_radius) :
+    Ellipse(double big_radius, double small_radius) :
         big_radius(big_radius),
         small_radius(small_radius) {}
 
@@ -22,4 +22,4 @@ private:
 };
 
 
-#endif //VECTOR3D_H_ELLIPS_H
+#endif //VECTOR3D_H_ELLIPSE_H
