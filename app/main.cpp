@@ -10,13 +10,14 @@
 #include <iomanip>
 #include <algorithm>
 #include <memory>
+#include "omp.h"
 
 int main() {
     std::random_device rd;
     std::mt19937 rg(rd());
     std::cout << std::setprecision(3);
 
-    std::vector<std::shared_ptr<Curve>> curves(15);
+    std::vector<std::shared_ptr<Curve>> curves(10);
     for(auto & curve: curves){
         // генерируем слусчайно тип фигуры и параметры
         int type = std::uniform_int_distribution<int>(0, 2)(rg);
@@ -55,6 +56,8 @@ int main() {
     for(auto& c: circles) { std::cout << c->getRadius() << ' '; }
 
     double total_radius_sum = 0;
+
+    #pragma omp parallel for reduction(+:total_radius_sum) // NOLINT
     for(auto& c: circles) { total_radius_sum += c->getRadius(); }
     std::cout << "\nTotal radius sum: " << total_radius_sum;
 
