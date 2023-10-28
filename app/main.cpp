@@ -53,10 +53,12 @@ int main() {
               [](const std::shared_ptr<Circle>& c1,const std::shared_ptr<Circle>& c2){
         return c1->getRadius() < c2->getRadius();
     });
+    std::cout << "Radii after sort: ";
     for(auto& c: circles) { std::cout << c->getRadius() << ' '; }
 
     double total_radius_sum = 0;
 
+    omp_set_num_threads(-1);
     #pragma omp parallel for reduction(+:total_radius_sum) // NOLINT
     for(auto& c: circles) { total_radius_sum += c->getRadius(); }
     std::cout << "\nTotal radius sum: " << total_radius_sum;
