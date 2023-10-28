@@ -4,7 +4,8 @@ project(curves)
 
 set(SOURCES
         src/Vector3D.cpp
-        src/Circle.cpp)
+        src/Circle.cpp
+        src/Ellips.cpp )
 
 add_library(curves ${SOURCES})
 
