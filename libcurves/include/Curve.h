@@ -9,8 +9,8 @@
 
 class Curve {
 public:
-    virtual Vector3D getPoint() const = 0;
-    virtual Vector3D getDerivative() const = 0;
+    virtual Vector3D getPoint(double t) const = 0;
+    virtual Vector3D getDerivative(double t) const = 0;
 };
 
 
