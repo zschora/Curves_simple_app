@@ -1,0 +1,8 @@
+.idea/
+cmake-build-debug/
+*.swp
+*.swo
+*.swn
+*~
+Thumbs.db
+Desktop.ini
