@@ -17,3 +17,7 @@ Vector3D Circle::getDerivative(double t) const {
     double y = radius * cos(t);
     return {x, y, 0};
 }
+
+double Circle::getRadius() const {
+    return radius;
+}
