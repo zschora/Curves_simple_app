@@ -21,3 +21,10 @@ Vector3D Circle::getDerivative(double t) const {
 double Circle::getRadius() const {
     return radius;
 }
+
+Circle::Circle(double radius) {
+    if (radius <= 0){
+        throw std::invalid_argument("Radius must be positive.");
+    }
+    this->radius = radius;
+}

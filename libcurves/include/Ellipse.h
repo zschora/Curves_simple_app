@@ -10,9 +10,7 @@
 
 class Ellipse : public Curve {
 public:
-    Ellipse(double big_radius, double small_radius) :
-        big_radius(big_radius),
-        small_radius(small_radius) {}
+    Ellipse(double big_radius, double small_radius);
 
     Vector3D getPoint(double t) const override;
     Vector3D getDerivative(double t) const override;

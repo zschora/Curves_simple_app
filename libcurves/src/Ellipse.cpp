@@ -17,3 +17,10 @@ Vector3D Ellipse::getDerivative(double t) const {
     double y = small_radius * sin(t);
     return {x, y, 0};
 }
+
+Ellipse::Ellipse(double big_radius, double small_radius) {
+    if (big_radius <= 0 or small_radius <= 0)
+        throw std::invalid_argument("Radius must be positive");
+    this->big_radius = big_radius;
+    this->small_radius = small_radius;
+}

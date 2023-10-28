@@ -19,3 +19,10 @@ Vector3D Helix::getDerivative(double t) const {
     double z = step / 2 / M_PI;
     return {x, y, z};
 }
+
+Helix::Helix(double radius, double step) {
+    if (radius <= 0)
+        throw std::invalid_argument("Radius must be positive");
+    this->radius = radius;
+    this->step = step;
+}

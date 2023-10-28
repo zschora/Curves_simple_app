@@ -11,7 +11,7 @@
 
 class Circle : public Curve {
 public:
-    Circle(double radius) : radius(radius) {}
+    Circle(double radius);
     Vector3D getPoint(double t) const override;
     Vector3D getDerivative(double t) const override;
     double getRadius() const;

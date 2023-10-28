@@ -19,8 +19,8 @@ int main() {
     for(auto & curve: curves){
         // генерируем слусчайно тип фигуры и параметры
         int type = std::uniform_int_distribution<int>(0, 2)(rg);
-        double param1 = std::uniform_real_distribution<double>(0, 100)(rg);
-        double param2 = std::uniform_real_distribution<double>(0, 100)(rg);
+        double param1 = std::uniform_real_distribution<double>(0.1, 100)(rg);
+        double param2 = std::uniform_real_distribution<double>(0.1, 100)(rg);
         switch (type) {
             case 0:
                 curve = new Circle(param1);
